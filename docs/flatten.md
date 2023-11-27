@@ -1813,7 +1813,7 @@ rust_prost_dependencies()
 ## rust_prost_library
 
 <pre>
-rust_prost_library(<a href="#rust_prost_library-name">name</a>, <a href="#rust_prost_library-kwargs">kwargs</a>)
+rust_prost_library(<a href="#rust_prost_library-name">name</a>, <a href="#rust_prost_library-proto">proto</a>, <a href="#rust_prost_library-kwargs">kwargs</a>)
 </pre>
 
 A rule for generating a Rust library using Prost.
@@ -1824,6 +1824,7 @@ A rule for generating a Rust library using Prost.
 | Name  | Description | Default Value |
 | :------------- | :------------- | :------------- |
 | <a id="rust_prost_library-name"></a>name |  The name of the target.   |  none |
+| <a id="rust_prost_library-proto"></a>proto |  The name of the <code>proto_library</code> target to generate code from.   |  none |
 | <a id="rust_prost_library-kwargs"></a>kwargs |  Additional keyword arguments for the underlying <code>rust_prost_library</code> rule.   |  none |
 
 
