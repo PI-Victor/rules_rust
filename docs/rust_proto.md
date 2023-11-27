@@ -68,21 +68,12 @@ crates_repository(
     annotations = {
         "protoc-gen-prost": [crate.annotation(
             gen_binaries = ["protoc-gen-prost"],
-            patch_args = [
-                "-p1",
-            ],
-            patches = [
-                # Note: You will need to use this patch until a version greater than `0.2.2` of
-                # `protoc-gen-prost` is released.
-                "@rules_rust//proto/prost/private/3rdparty/patches:protoc-gen-prost.patch",
-            ],
         )],
         "protoc-gen-tonic": [crate.annotation(
             gen_binaries = ["protoc-gen-tonic"],
         )],
     },
     cargo_lockfile = "Cargo.Bazel.lock",
-    mode = "remote",
     packages = {
         "prost": crate.spec(
             version = "0",
@@ -100,7 +91,6 @@ crates_repository(
             version = "0",
         ),
     },
-    repository_name = "rules_rust_prost",
     tags = ["manual"],
 )
 ```
