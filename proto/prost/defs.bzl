@@ -6,11 +6,13 @@ load(
     _rust_prost_toolchain = "rust_prost_toolchain",
 )
 
-def rust_prost_library(name, **kwargs):
+def rust_prost_library(name, proto, **kwargs):
     """A rule for generating a Rust library using Prost.
 
     Args:
         name (str): The name of the target.
+        proto (str): The name of the `proto_library` target to generate code
+            from.
         **kwargs (dict): Additional keyword arguments for the underlying
             `rust_prost_library` rule.
     """
@@ -26,6 +28,7 @@ def rust_prost_library(name, **kwargs):
     _rust_prost_library(
         name = name,
         tags = tags,
+        proto = proto,
         **kwargs
     )
 
