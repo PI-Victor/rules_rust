@@ -54,14 +54,6 @@ crates_repository(
     annotations = {
         "protoc-gen-prost": [crate.annotation(
             gen_binaries = ["protoc-gen-prost"],
-            patch_args = [
-                "-p1",
-            ],
-            patches = [
-                # Note: You will need to use this patch until a version greater than `0.2.2` of
-                # `protoc-gen-prost` is released.
-                "@rules_rust//proto/prost/private/3rdparty/patches:protoc-gen-prost.patch",
-            ],
         )],
         "protoc-gen-tonic": [crate.annotation(
             gen_binaries = ["protoc-gen-tonic"],
